@@ -16,7 +16,7 @@ console.log(qdata.month); //returns 'february'
 // If anything goes wrong, throw a 404 error:
 http.createServer(function(req, res) {
   const query = url.parse(req.url, true);
-  const filename = `. ${query.pathname}`;
+  const filename = `.${query.pathname}`; // if console.log, will see "./summer.html"
   fs.readFile(filename, function(err, data) {
     if (err) {
       res.writeHead(404, {"Content-type": "text/html"});
